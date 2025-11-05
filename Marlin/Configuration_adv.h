@@ -3165,12 +3165,12 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(I)
-    #define I_CURRENT      1600
+    #define I_CURRENT      2600
     #define I_CURRENT_HOME I_CURRENT
-    #define I_MICROSTEPS    16
+    #define I_MICROSTEPS    0
     #define I_RSENSE         0.11
     #define I_CHAIN_POS     -1
-    #define I_INTERPOLATE  true
+    #define I_INTERPOLATE  false
     #define I_HOLD_MULTIPLIER 0.5
   #endif
 
