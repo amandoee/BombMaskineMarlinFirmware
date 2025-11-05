@@ -142,7 +142,7 @@ xyze_pos_t destination; // {0}
 // Set by the last G0 through G5 command's "F" parameter.
 // Functions that override this for custom moves *must always* restore it!
 #ifndef DEFAULT_FEEDRATE_MM_M
-  #define DEFAULT_FEEDRATE_MM_M 4000
+  #define DEFAULT_FEEDRATE_MM_M 1500 //Var 4000 før. Tror nok det er det som G0 bruger som default.
 #endif
 feedRate_t feedrate_mm_s = MMM_TO_MMS(DEFAULT_FEEDRATE_MM_M);
 int16_t feedrate_percentage = 100;
