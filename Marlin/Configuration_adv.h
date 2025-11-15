@@ -3125,13 +3125,13 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       800
-    #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     16
-    #define Z_RSENSE          0.11
-    #define Z_CHAIN_POS      -1
-    //#define Z_INTERPOLATE  true
-    //#define Z_HOLD_MULTIPLIER 0.5
+    #define Z_CURRENT      2600
+    #define Z_CURRENT_HOME Z_CURRENT
+    #define Z_MICROSTEPS    0
+    #define Z_RSENSE         0.11
+    #define Z_CHAIN_POS     -1
+    #define Z_INTERPOLATE  false
+    #define Z_HOLD_MULTIPLIER 0.5
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z2)

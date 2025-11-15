@@ -1230,10 +1230,10 @@
  * Endstop "Hit" State
  * Set to the state (HIGH or LOW) that applies to each endstop.
  */
-#define X_MIN_ENDSTOP_HIT_STATE HIGH
-#define X_MAX_ENDSTOP_HIT_STATE HIGH
-#define Y_MIN_ENDSTOP_HIT_STATE HIGH
-#define Y_MAX_ENDSTOP_HIT_STATE HIGH
+#define X_MIN_ENDSTOP_HIT_STATE LOW//HIGH
+#define X_MAX_ENDSTOP_HIT_STATE LOW//HIGH
+#define Y_MIN_ENDSTOP_HIT_STATE LOW//HIGH
+#define Y_MAX_ENDSTOP_HIT_STATE LOW//HIGH
 #define Z_MIN_ENDSTOP_HIT_STATE HIGH
 #define Z_MAX_ENDSTOP_HIT_STATE HIGH
 #define I_MIN_ENDSTOP_HIT_STATE HIGH
@@ -1308,7 +1308,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 1000, 1000, 300, 550} //550 for U virker med f1500 for U100. Ved ikke om den når at accelere helt derop.
+#define DEFAULT_MAX_FEEDRATE          { 25000, 25000, 500, 500} //550 for U virker med f1500 for U100. Ved ikke om den når at accelere helt derop.
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1321,7 +1321,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 300, 300, 3000, 50}
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 25, 25}
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1829,7 +1829,7 @@
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR false
 #define INVERT_Y_DIR false
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 #define INVERT_I_DIR true
 #define INVERT_J_DIR false
 //#define INVERT_K_DIR false
@@ -1875,10 +1875,10 @@
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 #define I_HOME_DIR -1
-#define J_HOME_DIR -1
+//#define J_HOME_DIR -1
 //#define K_HOME_DIR -1
 //#define U_HOME_DIR -1
-//#define V_HOME_DIR -1
+//#define V_HOME_DIR -1s
 //#define W_HOME_DIR -1
 
 /**
@@ -1899,8 +1899,8 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 200
-#define Y_BED_SIZE 200
+#define X_BED_SIZE 404
+#define Y_BED_SIZE 373
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1908,9 +1908,9 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 200
+#define Z_MAX_POS 20000000000
 #define I_MIN_POS 0
-#define I_MAX_POS 200
+#define I_MAX_POS 20000000000
 #define J_MIN_POS 0
 #define J_MAX_POS 200
 //#define K_MIN_POS 0
