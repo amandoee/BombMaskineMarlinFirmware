@@ -173,7 +173,7 @@
 //#define Z4_DRIVER_TYPE A4988
 #define I_DRIVER_TYPE  TMC2209
 //#define J_DRIVER_TYPE  TMC2209
-//#define K_DRIVER_TYPE  A4988
+//#define K_DRIVER_TYPE  TMC2209
 //#define U_DRIVER_TYPE  A4988
 //#define V_DRIVER_TYPE  A4988
 //#define W_DRIVER_TYPE  A4988
@@ -1831,7 +1831,7 @@
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR true
 #define INVERT_I_DIR true
-#define INVERT_J_DIR false
+#define INVERT_J_DIR true
 //#define INVERT_K_DIR false
 //#define INVERT_U_DIR false
 //#define INVERT_V_DIR false
@@ -1861,10 +1861,10 @@
  */
 //#define Z_IDLE_HEIGHT Z_HOME_POS
 
-//#define Z_CLEARANCE_FOR_HOMING  4   // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_CLEARANCE_FOR_HOMING  0   // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                                       // You'll need this much clearance above Z_MAX_POS to avoid grinding.
 
-//#define Z_AFTER_HOMING         10   // (mm) Height to move to after homing (if Z was homed)
+//#define Z_AFTER_HOMING         0   // (mm) Height to move to after homing (if Z was homed)
 //#define XY_AFTER_HOMING { 10, 10 }  // (mm) Move to an XY position after homing (and raising Z)
 
 //#define EVENT_GCODE_AFTER_HOMING "M300 P440 S200"  // Commands to run after G28 (and move to XY_AFTER_HOMING)
@@ -1875,7 +1875,7 @@
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 #define I_HOME_DIR -1
-//#define J_HOME_DIR -1
+#define J_HOME_DIR -1
 //#define K_HOME_DIR -1
 //#define U_HOME_DIR -1
 //#define V_HOME_DIR -1s
@@ -1912,7 +1912,7 @@
 #define I_MIN_POS 0
 #define I_MAX_POS 20000000000
 #define J_MIN_POS 0
-#define J_MAX_POS 200
+#define J_MAX_POS 20000000000
 //#define K_MIN_POS 0
 //#define K_MAX_POS 50
 //#define U_MIN_POS 0
