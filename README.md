@@ -1,3 +1,70 @@
+
+	; ---- HOME X & Y axes ---
+	G28 X Y
+
+	; ---- Point 1 ----
+	G0 X100 Y163 F25000
+	G1 Z16 U16 F1000
+	G1 Z75 F1000 
+	G92 U0 Z0
+	
+	; ---- Point 2 ----
+	G0 X182 Y125 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0	
+
+	; ---- Point 3 ----
+	G0 X261 Y168 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0
+
+	; ---- Point 6 ----
+	G0 X261 Y253 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0
+
+	; ---- Point 5 ----
+	G0 X181 Y212 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0
+
+	; ---- Point 4 ----
+	G0 X101 Y252 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0
+
+	; ---- Point 7 ----
+	G0 X101  Y331 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0
+
+	; ---- Point 8 ----
+	G0 X179 Y291 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0
+
+	; ---- Point 9 ----
+	G0 X260.5 Y332 F25000
+	G1 Z16 U16 F1000
+	G1 Z35 F1000
+	G92 U0 Z0
+
+	; ---- Point 10 ----
+	G0 X180.5 Y371 F25000
+	G1 Z16 U16 F1000
+	G1 Z70 F1000
+	G92 U0 Z0
+
+
+
+
 <p align="center"><img src="buildroot/share/pixmaps/logo/marlin-outrun-nf-500.png" height="250" alt="MarlinFirmware's logo" /></p>
 
 <h1 align="center">Marlin 3D Printer Firmware</h1>
