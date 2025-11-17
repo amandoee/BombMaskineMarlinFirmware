@@ -125,46 +125,56 @@
 #define X_ENABLE_PIN                        PE3
 #ifndef X_CS_PIN
   #define X_CS_PIN                          PE0
+  #endif
+  
+  #define Y_STEP_PIN                          PD5
+  #define Y_DIR_PIN                           PD4
+  #define Y_ENABLE_PIN                        PD6
+  #ifndef Y_CS_PIN 
+    #define Y_CS_PIN                          PD3
+  #endif
+
+// Use Z port for Y2 (dual Y axis)
+#define Y2_STEP_PIN                         PD15
+#define Y2_DIR_PIN                          PD14
+#define Y2_ENABLE_PIN                       PC7
+#ifndef Y2_CS_PIN
+  #define Y2_CS_PIN                         PC6
 #endif
 
-#define Y_STEP_PIN                          PD5
-#define Y_DIR_PIN                           PD4
-#define Y_ENABLE_PIN                        PD6
-#ifndef Y_CS_PIN
-  #define Y_CS_PIN                          PD3
+// Z axis is not used, but Marlin requires these pins to be defined
+#define Z_STEP_PIN                          -1
+#define Z_DIR_PIN                           -1
+#define Z_ENABLE_PIN                        -1
+#define Z_CS_PIN                            -1
+
+
+// I axis uses E0 port (4th axis, displayed as U)
+#ifndef I_STEP_PIN
+  #define I_STEP_PIN                       PD11
+#endif
+#ifndef I_DIR_PIN
+  #define I_DIR_PIN                        PD10
+#endif
+#ifndef I_ENABLE_PIN
+  #define I_ENABLE_PIN                     PD13
+#endif
+#ifndef I_CS_PIN
+  #define I_CS_PIN                         PD12
 #endif
 
-#define Z_STEP_PIN                          PA15
-#define Z_DIR_PIN                           PA8
-#define Z_ENABLE_PIN                        PD1
-#ifndef Z_CS_PIN
-  #define Z_CS_PIN                          PD0
+// J axis uses E1 port (5th axis, displayed as V)
+#ifndef J_STEP_PIN
+  #define J_STEP_PIN                       PD15
 #endif
-
-#ifndef E0_STEP_PIN
-  #define E0_STEP_PIN                       PD15
+#ifndef J_DIR_PIN
+  #define J_DIR_PIN                        PA8
 #endif
-#ifndef E0_DIR_PIN
-  #define E0_DIR_PIN                        PD14
+#ifndef J_ENABLE_PIN
+  #define J_ENABLE_PIN                     PD1
 #endif
-#ifndef E0_ENABLE_PIN
-  #define E0_ENABLE_PIN                     PC7
-#endif
-#ifndef E0_CS_PIN
-  #define E0_CS_PIN                         PC6
-#endif
-
-#ifndef E1_STEP_PIN
-  #define E1_STEP_PIN                       PD11
-#endif
-#ifndef E1_DIR_PIN
-  #define E1_DIR_PIN                        PD10
-#endif
-#ifndef E1_ENABLE_PIN
-  #define E1_ENABLE_PIN                     PD13
-#endif
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                         PD12
+#ifndef J_CS_PIN
+  #define J_CS_PIN                         PD0
 #endif
 
 //
@@ -257,7 +267,10 @@
   //
   #define X_SERIAL_TX_PIN                   PE0
   #define Y_SERIAL_TX_PIN                   PD3
-  #define Z_SERIAL_TX_PIN                   PD0
+  #define Y2_SERIAL_TX_PIN                  PD0  // Y2 uses Z port
+  //#define Z_SERIAL_TX_PIN                 PD0  // Not used - Z port reassigned to Y2
+  #define I_SERIAL_TX_PIN                   PC6  // I uses E0 port
+  #define J_SERIAL_TX_PIN                   PB13 // J uses E1 port
   #define E0_SERIAL_TX_PIN                  PC6
   #define E1_SERIAL_TX_PIN                  PD12
 
