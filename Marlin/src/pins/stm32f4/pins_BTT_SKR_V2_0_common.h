@@ -126,20 +126,36 @@
 #ifndef X_CS_PIN
   #define X_CS_PIN                          PE0
   #endif
-  
-  #define Y_STEP_PIN                          PD5
-  #define Y_DIR_PIN                           PD4
-  #define Y_ENABLE_PIN                        PD6
-  #ifndef Y_CS_PIN 
-    #define Y_CS_PIN                          PD3
+
+  // Use Z port for Y2 (dual Y axis)
+  #define Y_STEP_PIN                         PD5
+  #define Y_DIR_PIN                          PD4
+  #define Y_ENABLE_PIN                       PD6
+  #ifndef Y_CS_PIN
+    #define Y_CS_PIN                         PD3
   #endif
 
-// Use Z port for Y2 (dual Y axis)
-#define Y2_STEP_PIN                         PD15
-#define Y2_DIR_PIN                          PD14
-#define Y2_ENABLE_PIN                       PC7
-#ifndef Y2_CS_PIN
-  #define Y2_CS_PIN                         PC6
+
+// J axis uses Z port (5th axis, displayed as V)
+#ifndef J_STEP_PIN
+  #define J_STEP_PIN                       PA15
+#endif
+#ifndef J_DIR_PIN
+  #define J_DIR_PIN                        PA8
+#endif
+#ifndef J_ENABLE_PIN
+  #define J_ENABLE_PIN                     PD1
+#endif
+#ifndef J_CS_PIN
+  #define J_CS_PIN                         PD0
+#endif
+
+  
+#define Y2_STEP_PIN                          PD15
+#define Y2_DIR_PIN                           PD14
+#define Y2_ENABLE_PIN                        PC7
+#ifndef Y2_CS_PIN 
+  #define Y2_CS_PIN                          PC6
 #endif
 
 // Z axis is not used, but Marlin requires these pins to be defined
@@ -163,19 +179,7 @@
   #define I_CS_PIN                         PD12
 #endif
 
-// J axis uses E1 port (5th axis, displayed as V)
-#ifndef J_STEP_PIN
-  #define J_STEP_PIN                       PD15
-#endif
-#ifndef J_DIR_PIN
-  #define J_DIR_PIN                        PA8
-#endif
-#ifndef J_ENABLE_PIN
-  #define J_ENABLE_PIN                     PD1
-#endif
-#ifndef J_CS_PIN
-  #define J_CS_PIN                         PD0
-#endif
+
 
 //
 // Temperature Sensors
@@ -266,13 +270,13 @@
   // Software serial
   //
   #define X_SERIAL_TX_PIN                   PE0
-  #define Y_SERIAL_TX_PIN                   PD3
-  #define Y2_SERIAL_TX_PIN                  PD0  // Y2 uses Z port
+  #define Y_SERIAL_TX_PIN                   PD3  // Y uses Z port
+  #define Y2_SERIAL_TX_PIN                  PC6  // Y2
   //#define Z_SERIAL_TX_PIN                 PD0  // Not used - Z port reassigned to Y2
-  #define I_SERIAL_TX_PIN                   PC6  // I uses E0 port
-  #define J_SERIAL_TX_PIN                   PB13 // J uses E1 port
-  #define E0_SERIAL_TX_PIN                  PC6
-  #define E1_SERIAL_TX_PIN                  PD12
+  #define I_SERIAL_TX_PIN                   PD12 // I uses E0 port
+  #define J_SERIAL_TX_PIN                   PD0  // J uses E1 port
+  #define E0_SERIAL_TX_PIN                  -1//PC6
+  #define E1_SERIAL_TX_PIN                  -1//PD12
 
   // Reduce baud rate to improve software serial reliability
   #ifndef TMC_BAUD_RATE
