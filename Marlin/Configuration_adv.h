@@ -3177,7 +3177,7 @@
   #if AXIS_IS_TMC_CONFIG(J)
     #define J_CURRENT      2600
     #define J_CURRENT_HOME J_CURRENT
-    #define J_MICROSTEPS    16
+    #define J_MICROSTEPS    0
     #define J_RSENSE         0.11
     #define J_CHAIN_POS     -1
     #define J_INTERPOLATE  false
